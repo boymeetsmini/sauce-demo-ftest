@@ -27,7 +27,7 @@ The Sauce Demo functional tests are implemented in WebDriverIO v8 with the Mocha
 
 The test scenarios are contained in the `.spec.js` files in `test/specs`.
 
-The associated page objects are in `test/pages`.
+The associated page objects are in `test/pages`.  `page.js` is the base class which all other page object classes must extend.
 
 All test scenario file names should end in `.spec.js` (example: `login.spec.js`).
 
