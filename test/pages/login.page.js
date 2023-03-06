@@ -34,7 +34,8 @@ class LoginPage extends Page {
     super.open('');
   }
 
-  async login(username, password) {
+  // password by default is correct one for all test users
+  async login(username, password = 'secret_sauce') {
     await this.usernameInput.setValue(username);
     await this.passwordInput.setValue(password);
     await this.loginButton.click();

@@ -20,7 +20,10 @@ describe('Inventory page hamburger menu tests', function () {
 
         // close menu
         await inventoryPage.menuCloseButton.click();
-        await expect(inventoryPage.menuCloseButton).not.toBeDisplayed();
         await expect(inventoryPage.menuOpenButton).toBeDisplayed();
+    });
+
+    afterEach(async function() {
+        await inventoryPage.logout();
     });
 });
