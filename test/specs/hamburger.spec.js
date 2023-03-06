@@ -10,7 +10,7 @@ describe('Inventory page hamburger menu tests', function () {
         await inventoryPage.pageTitle.waitForDisplayed();
     });
 
-    it('Open and close hamburger menu [SMOKE]', async function () {
+    it('Open and close hamburger menu', async function () {
         // open menu, ensure close button and all menu items are displayed
         await inventoryPage.menuOpenButton.click();
         await expect(inventoryPage.menuCloseButton).toBeDisplayed();

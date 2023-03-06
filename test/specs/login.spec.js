@@ -19,7 +19,7 @@ describe('Login tests', function () {
         await expect(loginPage.pageTitle).toHaveText('Swag Labs');
     });
 
-    it(`Login and logout [SMOKE]`, async function() {
+    it(`Login and logout`, async function() {
         await loginPage.login('standard_user', correctPass);
         await expect(inventoryPage.pageTitle).toBeDisplayed();
         await expect(browser).toHaveUrlContaining('inventory.html');
@@ -28,13 +28,13 @@ describe('Login tests', function () {
         await expect(browser).toHaveUrl('https://www.saucedemo.com/');
     });
 
-    it('Login as locked out user [SMOKE]', async function () {
+    it('Login as locked out user', async function () {
         await loginPage.login('locked_out_user', correctPass);
         await expect(loginPage.errorMessage).toHaveText('Epic sadface: Sorry, this user has been locked out.');
     });
 
     loginTests.forEach(async function ({user}) {
-        it(`Login as ${user} with incorrect password [SMOKE]`, async function () {
+        it(`Login as ${user} with incorrect password`, async function () {
             await loginPage.login(user, incorrectPass);
             await expect(loginPage.errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
         });
