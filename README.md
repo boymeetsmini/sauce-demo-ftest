@@ -4,6 +4,7 @@
 
 ## Installation
 
+NodeJS v18+ is required.
 The `package.json` contains all necessary dependencies.  Just run:
 
 ```
