@@ -18,6 +18,5 @@
   },
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
-    "smoke-test": "wdio run ./wdio.conf.js"
   }
 }
