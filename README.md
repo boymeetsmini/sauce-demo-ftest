@@ -12,7 +12,7 @@ npm install
 
 ## Run tests
 
-Running the tests requires the latest version of Google Chrome browser. ChromeDriver is already included in the dependencies.
+Running the tests requires NodeJS v18+ and the latest version of Google Chrome browser. ChromeDriver is already included in the dependencies.
 
 To run the tests:
 
