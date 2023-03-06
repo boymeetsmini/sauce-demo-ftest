@@ -1,5 +1,5 @@
 {
-  "name": "my-new-project",
+  "name": "sauce-demo-ftest",
   "type": "module",
   "devDependencies": {
     "@babel/cli": "^7.21.0",
