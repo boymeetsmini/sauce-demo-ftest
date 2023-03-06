@@ -31,12 +31,14 @@ describe('Login tests', function () {
     it('Login as locked out user', async function () {
         await loginPage.login('locked_out_user', correctPass);
         await expect(loginPage.errorMessage).toHaveText('Epic sadface: Sorry, this user has been locked out.');
+        await expect(loginPage.errorMessage).toHaveAttr('background-color', '#e2231a');
     });
 
     loginTests.forEach(async function ({user}) {
         it(`Login as ${user} with incorrect password`, async function () {
             await loginPage.login(user, incorrectPass);
             await expect(loginPage.errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
+            await expect(loginPage.errorMessage).toHaveAttr('background-color', '#e2231a');
         });
     });
 
@@ -45,6 +47,7 @@ describe('Login tests', function () {
             await loginPage.login(user, '');
             await loginPage.errorMessage.waitForExist();
             await expect(loginPage.errorMessage).toHaveText('Epic sadface: Password is required');
+            await expect(loginPage.errorMessage).toHaveAttr('background-color', '#e2231a');
         });
     });
 
@@ -53,12 +56,14 @@ describe('Login tests', function () {
         await loginPage.login('standard_user', '');
         await loginPage.errorMessage.waitForExist();
         await expect(loginPage.errorMessage).toHaveText('Epic sadface: Password is required');
+        await expect(loginPage.errorMessage).toHaveAttr('background-color', '#e2231a');
         await loginPage.errorMessageCloseButton.click();
 
         // login with wrong password, clear error message
         await loginPage.login('standard_user', incorrectPass);
         await loginPage.errorMessage.waitForExist();
         await expect(loginPage.errorMessage).toHaveText('Epic sadface: Username and password do not match any user in this service');
+        await expect(loginPage.errorMessage).toHaveAttr('background-color', '#e2231a');
         await loginPage.errorMessageCloseButton.click();
 
         // login with correct credentials, inventory page should load
